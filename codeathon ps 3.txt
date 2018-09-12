@@ -1,0 +1,214 @@
+#include <iostream>
+
+using namespace std;
+
+class post_plan
+    {
+    private:    
+    char PName[20];
+    float month_rental;
+    float free_internet;
+    float free_calls;
+    float free_sms;
+    float call_charges;
+    float sms_charges;
+    float data_charges;
+    float roaming_charges;
+    public:
+    void add_data();
+    void retrieve_data();
+    void filter_month_rental(int,int);
+    void filter_free_internet(int,int);
+    void filter_free_calls(int,int);
+    void filter_free_sms(int,int);
+    };
+void post_plan::add_data()
+{
+    cout<<"\nEnter Plan name:";
+    cin>>PName;
+    cout<<"\nEnter Monthly Rental: ";
+    cin>>month_rental;
+    cout<<"\nEnter Free Internet: ";
+    cin>>free_internet;
+    cout<<"\nEnter Free Calls: ";
+    cin>>free_calls;
+    cout<<"\nEnter Free SMS: ";
+    cin>>free_sms;
+    cout<<"\nEnter Call Charges: ";
+    cin>>call_charges;
+    cout<<"\nEnter SMS charges: ";
+    cin>>sms_charges;
+    cout<<"\nEnter Data Charges: ";
+    cin>>data_charges;
+    cout<<"\nEnter Roaming Charges: ";
+    cin>>roaming_charges;
+}
+void post_plan::retrieve_data()
+{
+    cout<<"\n\nPLAN DETAILS: ";
+    cout<<"\nPlan Name:"<<PName;
+    cout<<"\nMonthly Rental: "<<month_rental;
+    cout<<"\nFree Internet: "<<free_internet;
+    cout<<"\nFree Calls: "<<free_calls;
+    cout<<"\nFree SMS: "<<free_sms;
+    cout<<"\nCall Charges: "<<call_charges;
+    cout<<"\nSMS Charges: "<<sms_charges;
+    cout<<"\nData Charges: "<<data_charges;
+    cout<<"\nRoaming Charges: "<<roaming_charges;
+}
+void post_plan::filter_month_rental(int min, int max)
+{
+    if(month_rental>min&&month_rental<max)
+    {
+    cout<<"\n\nFILTERED DETAILS: ";
+    cout<<"\nPlan Name:"<<PName;
+    cout<<"\nMonthly Rental: "<<month_rental;
+    cout<<"\nFree Internet: "<<free_internet;
+    cout<<"\nFree Calls: "<<free_calls;
+    cout<<"\nFree SMS: "<<free_sms;
+    cout<<"\nCall Charges: "<<call_charges;
+    cout<<"\nSMS Charges: "<<sms_charges;
+    cout<<"\nData Charges: "<<data_charges;
+    cout<<"\nRoaming Charges: "<<roaming_charges;
+    }
+    else
+    cout<<"No such record!";
+}
+void post_plan::filter_free_internet(int min, int max)
+{
+    if(free_internet>min&&free_internet<max)
+    {
+    cout<<"\n\nFILTERED DETAILS: ";
+    cout<<"\nPlan Name:"<<PName;
+    cout<<"\nMonthly Rental: "<<month_rental;
+    cout<<"\nFree Internet: "<<free_internet;
+    cout<<"\nFree Calls: "<<free_calls;
+    cout<<"\nFree SMS: "<<free_sms;
+    cout<<"\nCall Charges: "<<call_charges;
+    cout<<"\nSMS Charges: "<<sms_charges;
+    cout<<"\nData Charges: "<<data_charges;
+    cout<<"\nRoaming Charges: "<<roaming_charges;
+    }
+    else
+    cout<<"No such record!";
+}
+void post_plan::filter_free_calls(int min, int max)
+{
+    if(free_calls>min&&free_calls<max)
+    {
+     cout<<"\n\nFILTERED DETAILS: ";    
+    cout<<"\nPlan Name:"<<PName;
+    cout<<"\nMonthly Rental: "<<month_rental;
+    cout<<"\nFree Internet: "<<free_internet;
+    cout<<"\nFree Calls: "<<free_calls;
+    cout<<"\nFree SMS: "<<free_sms;
+    cout<<"\nCall Charges: "<<call_charges;
+    cout<<"\nSMS Charges: "<<sms_charges;
+    cout<<"\nData Charges: "<<data_charges;
+    cout<<"\nRoaming Charges: "<<roaming_charges;
+    }
+    else
+    cout<<"No such record!";
+}
+void post_plan::filter_free_sms(int min, int max)
+{
+    if(free_sms>min&&free_sms<max)
+    {
+     cout<<"\n\nFILTERED DETAILS: ";
+    cout<<"\nPlan Name:"<<PName;
+    cout<<"\nMonthly Rental: "<<month_rental;
+    cout<<"\nFree Internet: "<<free_internet;
+    cout<<"\nFree Calls: "<<free_calls;
+    cout<<"\nFree SMS: "<<free_sms;
+    cout<<"\nCall Charges: "<<call_charges;
+    cout<<"\nSMS Charges: "<<sms_charges;
+    cout<<"\nData Charges: "<<data_charges;
+    cout<<"\nRoaming Charges: "<<roaming_charges;
+    }
+    else
+    cout<<"No such record!";
+}
+int main()
+{   
+    post_plan p[20];
+    cout<<"Welcome to AirTelecom Network";
+    cout<<"\n-----------------------------";
+    cout<<"\nChoose: ";
+    cout<<"\n1. Add Data";
+    cout<<"\n2. Retrieve Data";
+    cout<<"\n3. Filter by Monthly Rental";
+    cout<<"\n4. Filter by Free Internet";
+    cout<<"\n5. Filter by Free Calls";
+    cout<<"\n6. Filter by Free SMSs";
+    int n,pl;
+    do
+    {
+    cin>>n;
+    switch (n)
+    {
+    case 1:
+    cout<<"\n\nNo. of plans: ";
+    cin>>pl;
+    for(int i=0;i<pl;i++)
+    {
+        p[i].add_data();
+    }
+        break;     
+    case 2:
+    for(int i=0;i<pl;i++)
+    {
+        p[i].retrieve_data();
+    }
+    break;
+    case 3:
+    int min, max;
+    cout<<"\nEnter the min limit: ";
+    cin>>min;
+    cout<<"\nEnter the max limit: ";
+    cin>>max;
+    for(int i=0;i<pl;i++)
+    {
+        p[i].filter_month_rental(min,max);
+    }
+    break;
+    case 4:
+    //int min, max;
+    cout<<"\nEnter the min limit: ";
+    cin>>min;
+    cout<<"\nEnter the max limit: ";
+    cin>>max;
+    for(int i=0;i<pl;i++)
+    {
+        p[i].filter_free_internet(min,max);
+    }
+    break;
+    case 5:
+    //int min, max;
+    cout<<"\nEnter the min limit: ";
+    cin>>min;
+    cout<<"\nEnter the max limit: ";
+    cin>>max;
+    for(int i=0;i<pl;i++)
+    {
+        p[i].filter_free_calls(min,max);
+    }
+    break;
+    case 6: 
+    //int min, max;
+    cout<<"\nEnter the min limit: ";
+    cin>>min;
+    cout<<"\nEnter the max limit: ";
+    cin>>max;
+    for(int i=0;i<pl;i++)
+    {
+        p[i].filter_free_sms(min,max);
+    }
+    break;
+    default:
+    cout<<"\nWrong Choice!";
+    }
+    
+    cout<<"\nDo you want to continue?(y=1/n=0)";
+    cin>>n;
+    }while(n==1);
+}
